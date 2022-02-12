@@ -11,6 +11,7 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+const winner_goal = prompt("Set Winning Score");
 
 let active_Player = 0;
 let totalvalue = 0;
@@ -53,7 +54,7 @@ btnHold.addEventListener('click',()=>{
   if(gamestatus)
   { 
    scoreboard[active_Player] += totalvalue;
-   if(scoreboard[active_Player]>20)
+   if(scoreboard[active_Player]>Number(winner_goal))
    {
     document.querySelector(`.player--${active_Player}`).classList.add("player--winner");
     gamestatus=false;
